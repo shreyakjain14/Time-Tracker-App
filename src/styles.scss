@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: #f2f6f8;
+}
+
+:root {
+  --active-btn-color: #5056ed;
+  --inactive-color: #d9d9d9;
+  --danger-red: red;
+  --black: #000;
+  --white: #fff;
+}

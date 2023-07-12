@@ -1,0 +1,33 @@
+<div class="task-container">
+  <div class="head">
+    <div class="name">
+      {{ task.name }}
+    </div>
+    <div class="actions-container">
+      <div class="divider"></div>
+      <div class="timer">{{ calculateTimerValue() }}</div>
+      <button class="action-btn" (click)="toggleTimer()">
+        {{ isTimerStarted ? "Stop" : "Start" }}
+      </button>
+      <button (click)="deleteTask()" class="delete-btn">X</button>
+    </div>
+  </div>
+  <div class="history-container">
+    <div class="title">History</div>
+    <div class="histories" *ngIf="task.histories.length > 0; else noHistories">
+      <div class="history" *ngFor="let history of task.histories">
+        Started the timer at
+        {{ history.startTime | date : "d/M/yyyy hh:mm:ss" }}
+        <ng-container *ngIf="history.endTime; else noEndtime"
+          >& Stopped at
+          {{ history.endTime | date : "d/M/yyyy hh:mm:ss" }}</ng-container
+        >
+        <ng-template #noEndtime>(Active)</ng-template>
+      </div>
+    </div>
+    <ng-template #noHistories
+      >No History Found, Click on the start button to track the
+      timer</ng-template
+    >
+  </div>
+</div>

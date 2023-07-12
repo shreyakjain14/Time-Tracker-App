@@ -1,0 +1,128 @@
+.task-container {
+  min-width: 60vw;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 1.5rem;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 0.75rem;
+
+  .name {
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  .divider {
+    width: 2px;
+    background: var(--inactive-color);
+    margin-right: 2rem;
+    height: 2.5rem;
+  }
+
+  .actions-container {
+    display: flex;
+    align-items: center;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .timer {
+    color: var(--active-btn-color);
+    font-size: 1.25rem;
+  }
+
+  .action-btn {
+    margin-left: 3.5rem;
+    margin-right: 0.75rem;
+    border: none;
+    color: var(--white);
+    font-size: 1rem;
+    background-color: var(--active-btn-color);
+    padding: 0.75rem 3rem;
+    border-radius: 3.5rem;
+  }
+
+  .delete-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--danger-red);
+    border-radius: 1.25rem;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+  }
+}
+
+.history-container {
+  .title {
+    color: var(--black);
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 0.75rem;
+  }
+
+  .histories {
+    display: flex;
+    flex-direction: column-reverse;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    .history {
+      margin-bottom: 0.75rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .head {
+    flex-direction: column;
+
+    .name {
+      margin-bottom: 0.75rem;
+    }
+
+    .divider {
+      display: none;
+    }
+  }
+  .actions-container {
+    flex-direction: column;
+
+    .timer {
+      margin-bottom: 0.75rem;
+    }
+
+    .action-btn {
+      margin-bottom: 0.75rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .delete-btn {
+      margin-bottom: 0.75rem;
+    }
+  }
+}

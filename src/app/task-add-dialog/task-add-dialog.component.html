@@ -1,0 +1,19 @@
+<dialog class="dialog-container" #dialog (click)="detectOutside($event)" open>
+  <div class="dialog">
+    <form (ngSubmit)="submitTask()">
+      <div class="input-field">
+        <label for="task-name">Enter the Task Name</label>
+        <input
+          type="text"
+          [(ngModel)]="taskName"
+          id="task-name"
+          name="task-name"
+          required
+        />
+      </div>
+      <button class="submit-btn" type="submit" [disabled]="!taskName.length">
+        Save
+      </button>
+    </form>
+  </div>
+</dialog>
